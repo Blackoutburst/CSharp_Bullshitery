@@ -20,7 +20,9 @@ public class Shader {
 
         string log = GL.GetShaderInfoLog(shader.id);
 
-        if (!string.IsNullOrEmpty(log)) Console.WriteLine(log);
+        if (!string.IsNullOrEmpty(log)) {
+            Console.WriteLine(log);
+        }
 
         return (shader);
     }

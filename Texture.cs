@@ -5,7 +5,7 @@ using SixLabors.ImageSharp.PixelFormats;
 using SixLabors.ImageSharp.Processing;
 
 public class Texture {
-    public int id;
+    protected int id;
 
     public Texture(string filePath) {
         this.id = GL.GenTexture();
@@ -32,5 +32,9 @@ public class Texture {
         GL.GenerateMipmap(GenerateMipmapTarget.Texture2D);
         GL.TexParameter(TextureTarget.Texture2D, TextureParameterName.TextureMagFilter, (int)TextureMagFilter.Linear);
         GL.TexParameter(TextureTarget.Texture2D, TextureParameterName.TextureMinFilter, (int)TextureMinFilter.Linear);
+    }
+
+    public int GetId() {
+        return (this.id);
     }
 }

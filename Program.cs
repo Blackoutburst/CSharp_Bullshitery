@@ -22,25 +22,17 @@ public class Program {
 
 		GameWindow window = new GameWindow(gws, nws);
 		
-		window.UpdateFrame += (FrameEventArgs args) => {
-			this.Update(window);
-		};
-
 		ShaderProgram program = new ShaderProgram(0);
 		window.Load += () => {
 			program = ShaderProgram.LoadShaderProgram("shaders/vertex.glsl", "shaders/fragment.glsl");
 			new Texture("res/test.png");
 		};
 
-		window.RenderFrame += (FrameEventArgs args) => {
+		window.RenderFrame += (discard) => {
 			this.Render(window, program);
 		};
 
 		window.Run();
-	}
-
-	private void Update(GameWindow window) {
-
 	}
 
 	private void Render(GameWindow window, ShaderProgram program) {

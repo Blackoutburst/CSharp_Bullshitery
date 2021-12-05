@@ -28,7 +28,9 @@ public class ShaderProgram {
 
         string log = GL.GetProgramInfoLog(program.id);
 
-        if (!string.IsNullOrEmpty(log)) Console.WriteLine(log);
+        if (!string.IsNullOrEmpty(log)) {
+            Console.WriteLine(log);
+        }
 
         return (program);
     }
