@@ -28,7 +28,7 @@ public class Program {
 			new Texture("res/test.png");
 		};
 
-		window.RenderFrame += (discard) => {
+		window.RenderFrame += (_) => {
 			this.Render(window, program);
 		};
 
